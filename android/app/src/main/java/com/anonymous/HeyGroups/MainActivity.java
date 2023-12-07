@@ -7,6 +7,7 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactActivityDelegate;
+import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 
 import expo.modules.ReactActivityDelegateWrapper;
 
@@ -62,4 +63,12 @@ public class MainActivity extends ReactActivity {
     // because it's doing more than {@link Activity#moveTaskToBack} in fact.
     super.invokeDefaultOnBackPressed();
   }
+
+  protected List<ReactPackage> getPackages() {
+  return Arrays.asList(
+    new MainReactPackage(),
+    new ReactNativeFirebaseAppPackage(),
+  )
+  }
+  
 }
